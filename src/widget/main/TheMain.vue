@@ -21,7 +21,6 @@ const formValue = ref({
   fio: "",
   presence: "Я приду / Мы придем",
   drinks: [],
-  twoDay: "Да",
 });
 
 const rules = {
@@ -53,7 +52,6 @@ const sendHandler = () => {
     return;
   }
 
-  console.log(Array.isArray(data.value!.items));
   formRef.value?.validate(
     async (errors: Array<FormValidationError> | undefined) => {
       if (
@@ -88,17 +86,13 @@ const sendHandler = () => {
 <template>
   <page-layout no-border>
     <div class="main">
-      <div class="main__title">
-        <div class="main__title-text">Николай</div>
-        <div class="main__title-text">Валерия</div>
-      </div>
-
-      <div class="main__description">
+      <div class="main__description description-title">
         <div class="main__description-text">
-          ПРИГЛАШАЕМ ВАС РАЗДЕЛИТЬ
+          ВМЕСТЕ И
 
           <br />
-          С НАМИ САМЫЙ СЧАСТЛИВЫЙ ДЕНЬ
+
+          НАВСЕГДА
         </div>
       </div>
 
@@ -106,19 +100,28 @@ const sendHandler = () => {
         <div class="main__and-text">&</div>
       </div>
 
+      <div class="main__title">
+        <div class="main__title-text">Никита</div>
+        <div class="main__title-text">Татьяна</div>
+      </div>
+
+      <div class="main__description">
+        <div class="main__description-text">ПРИГЛАШАЕМ НА СВАДЬБУ</div>
+      </div>
+
       <div class="main__date">
         <div class="main__date-week date">суббота</div>
         <div class="main__date-number">
-          <div class="main__date-number-label">январь</div>
-          <div class="main__date-number-text">4</div>
+          <div class="main__date-number-label">июня</div>
+          <div class="main__date-number-text">11</div>
         </div>
         <div class="main__date-time date">
-          <div class="main__data-time-text">15:30</div>
+          <div class="main__data-time-text">15:20</div>
         </div>
       </div>
 
       <div class="main__img">
-        <img class="main__img-bg" src="../../assets/flowers.png" />
+        <img class="main__img-bg" src="../../assets/background.png" />
       </div>
     </div>
 
@@ -132,8 +135,11 @@ const sendHandler = () => {
             </div>
 
             <div class="card__text">
-              Мы рады сообщить Вам, что 04.01.2025 состоится самое главное
-              торжество в нашей жизни - день нашей свадьбы! <br />
+              Мы рады сообщить Вам, что 11.06.2025 в 15:20 состоится самое
+              главное торжество в нашей жизни - день нашей свадьбы!
+
+              <br />
+
               Приглашаем Вас разделить с нами радость этого незабываемого дня.
             </div>
 
@@ -149,9 +155,24 @@ const sendHandler = () => {
             <div class="card__title">Дресс-код</div>
 
             <div class="card__text">
-              У нас нет строгого дресс-кода и мы будем рады видеть вас в любом
-              наряде. Но нам будет приятно, если вы выберете образ, подходящий
-              для праздничного вечера.
+              Для нас главное - ваше присутствие! Но мы будем рады, если вы
+              добавите в наряды элемент синего\голубого цвета.
+            </div>
+
+            <div class="card__title">Пожелания по подаркам</div>
+
+            <div class="card__text">
+              Мы понимаем, что дарить цветы на свадьбу - это традиция, но мы не
+              сможем насладиться их красотой в полной мере... Будем рады
+              альтернативе (в денежном эквиваленте).
+            </div>
+
+            <div class="card__title">Примечание</div>
+
+            <div class="card__text">
+              Будем благодарны, если вы воздержитесь от криков "Горько" на
+              празднике, ведь поцелуй — это знак выражения чувств, он не может
+              быть по заказу.
             </div>
 
             <div class="card__title">Ждем Вас!</div>
@@ -163,24 +184,24 @@ const sendHandler = () => {
             <div class="card__title">Свадебное расписание</div>
 
             <div class="card__text">
-              <div class="card__text-time">15:30</div>
+              <div class="card__text-time">15:20</div>
 
-              <div class="card__text-title">Фуршет</div>
-              <span> Адрес: ул. Степанова, 50А, станица Днепровская </span>
-            </div>
+              <div class="card__text-title">Торжественная роспись ЗАГС</div>
+              <span
+                >Приглашаем вас разделить с нами радость создания новой семьи.
+                <br />
 
-            <div class="card__text">
-              <div class="card__text-time">16:00</div>
-
-              <div class="card__text-title">Церемония</div>
-
-              <span> Окутайте себя магией волшебства </span>
+                Отдел ЗАГС Адмиралтейского района Санкт-Петербурга (1-я
+                Красноармейская ул., 6).
+              </span>
             </div>
 
             <div class="card__text">
               <div class="card__text-time">16:30</div>
-              <div class="card__text-title">Банкет</div>
-              <span> Время вкусной еды, танцев и развлечений </span>
+
+              <div class="card__text-title">Банкет на теплоходе</div>
+
+              <span> Время вкусной еды, танцев и развлечений.</span>
             </div>
 
             <div class="card__text">
@@ -195,14 +216,49 @@ const sendHandler = () => {
       </div>
     </div>
 
+    <!-- <div class="calendar">
+      <div class="card pad-t-3">
+        <div class="calendar__card">
+          <div class="card__title">Свадебное расписание</div>
+
+          <div class="card__text">
+            <div class="card__text-time">15:30</div>
+
+            <div class="card__text-title">Фуршет</div>
+            <span> Адрес: ул. Степанова, 50А, станица Днепровская </span>
+          </div>
+
+          <div class="card__text">
+            <div class="card__text-time">16:00</div>
+
+            <div class="card__text-title">Церемония</div>
+
+            <span> Окутайте себя магией волшебства </span>
+          </div>
+
+          <div class="card__text">
+            <div class="card__text-time">16:30</div>
+            <div class="card__text-title">Банкет</div>
+            <span> Время вкусной еды, танцев и развлечений </span>
+          </div>
+
+          <div class="card__text">
+            <div class="card__text-time">23:00</div>
+            <div class="card__text-title">Завершение банкета</div>
+            <span>
+              К сожалению, даже такой прекрасный вечер может закончиться
+            </span>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
     <div class="card pad-t-3 form">
       <div class="form__title">
         Подтвердите, пожалуйста, cвоё присутствие на торжестве
       </div>
 
       <div class="form__flex">
-        <div class="form__text">Мы будем ждать от вас ответ до 20/12/2024</div>
-
         <n-form ref="formRef" :model="formValue" :rules="rules">
           <n-form-item
             class="form-item"
@@ -268,23 +324,6 @@ const sendHandler = () => {
             </div>
           </n-form-item>
 
-          <n-form-item
-            class="form-item"
-            path="twoDay"
-            label="Присутствие на втором дне"
-          >
-            <n-radio-group size="large" v-model:value="formValue.twoDay">
-              <n-space vertical>
-                <n-radio class="radio" label="Я приду / Мы придем" value="Да" />
-                <n-radio
-                  class="radio"
-                  label="Прийти не получится (но преползу)"
-                  value="Нет"
-                />
-              </n-space>
-            </n-radio-group>
-          </n-form-item>
-
           <n-button
             strong
             secondary
@@ -303,8 +342,8 @@ const sendHandler = () => {
     <yandex-map
       :settings="{
         location: {
-          center: [38.806169, 45.619262],
-          zoom: 16,
+          center: [30.315575, 59.915845],
+          zoom: 18,
         },
       }"
       width="100%"
@@ -315,8 +354,8 @@ const sendHandler = () => {
 
       <yandex-map-default-marker
         :settings="{
-          coordinates: [38.8063, 45.619],
-          title: 'Ресторан Якорь',
+          coordinates: [30.3155, 59.91578],
+          title: 'ЗАГС',
         }"
       />
     </yandex-map>
@@ -324,6 +363,20 @@ const sendHandler = () => {
 </template>
 
 <style lang="scss" scoped>
+.calendar {
+  background-color: rgb(236, 255, 194);
+  background-image: url("../../assets/calendar.png");
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.description-title {
+  top: 37% !important;
+}
+
 .n-button {
   text-transform: uppercase;
 }
@@ -459,7 +512,8 @@ const sendHandler = () => {
 
   &__date {
     position: absolute;
-    top: 60%;
+    top: 80%;
+    margin-left: 20px;
     display: flex;
     align-items: center;
     gap: 0 40px;
@@ -501,7 +555,8 @@ const sendHandler = () => {
 
   &__and {
     position: absolute;
-    top: 21.5%;
+    top: 33%;
+    margin-left: 35px;
 
     &-text {
       font-size: 171.29pt;
@@ -511,14 +566,6 @@ const sendHandler = () => {
       letter-spacing: 0em;
       text-align: center;
 
-      // @media screen and (width < 700px) {
-      //   font-size: 150pt;
-      // }
-
-      // @media screen and (width < 500px) {
-      //   font-size: 120pt;
-      // }
-
       animation: appearHeartRevers 2.5s 1 cubic-bezier(0.215, 0.61, 0.355, 1)
         0.5s backwards;
     }
@@ -526,8 +573,8 @@ const sendHandler = () => {
 
   &__title {
     position: absolute;
-    top: 30%;
-
+    top: 45%;
+    margin-left: 20px;
     z-index: 1;
 
     &-text {
@@ -551,8 +598,8 @@ const sendHandler = () => {
 
   &__description {
     position: absolute;
-    top: 50%;
-
+    top: 70%;
+    margin-left: 35px;
     z-index: 1;
 
     &-text {

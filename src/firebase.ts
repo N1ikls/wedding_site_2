@@ -1,12 +1,14 @@
-import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "firebase/app";
 
 export const firebaseApp = initializeApp({
-  apiKey: "AIzaSyBgsCpvy85VkD5q_E5qUpfgN6aLDBp37EI",
-  authDomain: "wedding-c381e.firebaseapp.com",
-  projectId: "wedding-c381e",
-  storageBucket: "wedding-c381e.appspot.com",
-  messagingSenderId: "389168851247",
-  appId: "1:389168851247:web:2ae6b129c91ff5467719da",
-  measurementId: "G-7MGMNZHPZL",
+  apiKey: "AIzaSyDr0XJrMdhP3-fMInYeFQFFDf5f3Hy4EJo",
+  authDomain: "wedding-two-c726c.firebaseapp.com",
+  projectId: "wedding-two-c726c",
+  storageBucket: "wedding-two-c726c.firebasestorage.app",
+  messagingSenderId: "767338761868",
+  appId: "1:767338761868:web:98a40d3879fd1b6374f5a9",
+  measurementId: "G-SW15QJ42GH",
 });
+
+export const analytics = getAnalytics(firebaseApp);
