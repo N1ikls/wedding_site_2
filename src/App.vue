@@ -29,6 +29,11 @@ import { ruRU, dateRuRU } from "naive-ui";
 }
 
 @font-face {
+  font-family: "Adine Kirnberg";
+  src: url("./assets/adinekirnberg.ttf");
+}
+
+@font-face {
   font-family: "BickhamScript3";
   src: url("./assets/bickhamscriptthree.ttf");
 }
