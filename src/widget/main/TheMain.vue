@@ -100,6 +100,10 @@ const sendHandler = () => {
         <div class="main__and-text">&</div>
       </div>
 
+      <div class="main__net">
+        <img class="main__net-img" height="150px" src="../../assets/net8.png" />
+      </div>
+
       <div class="main__title">
         <div class="main__title-text">Никита</div>
         <div class="main__title-text">Татьяна</div>
@@ -112,8 +116,9 @@ const sendHandler = () => {
       <div class="main__date">
         <div class="main__date-week date">суббота</div>
         <div class="main__date-number">
-          <div class="main__date-number-label">июня</div>
           <div class="main__date-number-text">11</div>
+
+          <div class="main__date-number-label">июня</div>
         </div>
         <div class="main__date-time date">
           <div class="main__data-time-text">15:20</div>
@@ -512,7 +517,7 @@ const sendHandler = () => {
 
   &__date {
     position: absolute;
-    top: 80%;
+    top: 85%;
     margin-left: 20px;
     display: flex;
     align-items: center;
@@ -535,15 +540,11 @@ const sendHandler = () => {
 
     &-number {
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 10px;
 
-      &-label {
-        margin-top: -35px;
-      }
       &-text {
-        padding-top: 10px;
         font-size: 33px;
 
         // @media screen and (width < 700px) {
@@ -553,13 +554,22 @@ const sendHandler = () => {
     }
   }
 
+  &__net {
+    position: absolute;
+    top: 63%;
+    margin-left: 11px;
+
+    animation: appearHeartRevers 2.5s 1 cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s
+      backwards;
+  }
+
   &__and {
     position: absolute;
     top: 33%;
     margin-left: 35px;
 
     &-text {
-      font-size: 171.29pt;
+      font-size: 150pt;
       font-family: "Adine Kirnberg", sans-serif;
       color: rgb(239, 236, 207);
       line-height: inherit;
@@ -581,7 +591,7 @@ const sendHandler = () => {
       animation: appearHeartRevers 2.5s 1 cubic-bezier(0.215, 0.61, 0.355, 1)
         0.5s backwards;
 
-      font-size: 40.8226pt;
+      font-size: 30pt;
       font-family: Aquarelle;
       color: rgb(0, 0, 0);
       line-height: inherit;
@@ -598,7 +608,7 @@ const sendHandler = () => {
 
   &__description {
     position: absolute;
-    top: 70%;
+    top: 92%;
     margin-left: 35px;
     z-index: 1;
 
